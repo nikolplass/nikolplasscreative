@@ -16,13 +16,23 @@ Version      : 1.0
          * ----------------------------------------------------------------------------------------
          */
 
-        var prealoaderOption = $(window);
-        prealoaderOption.on("load", function () {
-            var preloader = jQuery('.preloader');
-            var preloaderArea = jQuery('.preloader-area');
-            preloader.fadeOut();
-            preloaderArea.delay(350).fadeOut('slow');
-        });
+        // var prealoaderOption = $(window);
+        // prealoaderOption.on("load", function () {
+        //     var preloader = jQuery('.preloader');
+        //     var preloaderArea = jQuery('.preloader-area');
+        //     preloader.fadeOut();
+        //     preloaderArea.delay(350).fadeOut('slow');
+        // });
+
+// 
+// Updated Preloader js via github - work with js 3.x
+    //<![CDATA[
+        $(window).on('load', function() { // makes sure the whole site is loaded 
+            $('#status').fadeOut(); // will first fade out the loading animation 
+            $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website. 
+            $('body').delay(350).css({'overflow':'visible'});
+        })
+    //]]>
 
 
 
